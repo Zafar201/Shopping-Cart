@@ -1,7 +1,7 @@
   <header>
-        <nav  class="navbar navbar-expand-lg col-sm-12 navbar-light bg-dark" >
+        <nav  class="navbar navbar-expand-lg col-sm-12 navbar-light " >
             <a class="navbar-brand" style="color: white;font-weight:800" href="/">Shopping Cart </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
                 aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -12,6 +12,7 @@
                         <a class="nav-link" style="color: white;" href="/">Products <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
+                        
                         <a class="nav-link" style="color: white;" href="/cart">Cart<span class="badge badge-success ml-2" id="cart-count">{{cartCount}}</span></a>
                     </li>
                     {{#if user}}
@@ -21,23 +22,33 @@
                     {{/if}}
                 </ul>
                 <div class="dropdown">
-             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             <button class="btn btn-secondary " type="button" >
                {{#if user}}
                   helooo,
                   {{user.Name}} 
+                  <a class="dropdown-item" href="/logout">Logout</a>
                   {{else}}
-                    Account
+                    {{!-- Account --}}
+                    <a class="dropdown-item" href="/login">Login</a>
               {{/if}}
               
              </button>
-             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+             {{!-- <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
            {{#if user}}
              <a class="dropdown-item" href="/logout">Logout</a>
             {{else}}
                   <a class="dropdown-item" href="/login">Login</a>
            {{/if}}
-          </div>
+          </div> --}}
          </div>
             </div>
         </nav>
     </header>
+    <style>
+        .navbar{
+            top: 0;
+            position: static;
+            float: none;
+            background-color: #0F1111;;
+        }
+    </style>
